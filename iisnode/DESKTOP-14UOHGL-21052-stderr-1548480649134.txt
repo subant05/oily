@@ -1,0 +1,136 @@
+(node:21052) [DEP0005] DeprecationWarning: Buffer() is deprecated due to security and usability issues. Please use the Buffer.alloc(), Buffer.allocUnsafe(), or Buffer.from() methods instead.
+Error: C:\inetpub\wwwroot\oily\views\index.ejs:2
+    1| 
+ >> 2| <%- include('partial/header'); -%>
+    3| 
+    4| Hello
+    5| <%- include('partial/footer'); -%>
+
+Could not find the include file "partial/header"
+    at getIncludePath (C:\inetpub\wwwroot\oily\node_modules\ejs\lib\ejs.js:162:13)
+    at includeFile (C:\inetpub\wwwroot\oily\node_modules\ejs\lib\ejs.js:288:19)
+    at include (C:\inetpub\wwwroot\oily\node_modules\ejs\lib\ejs.js:651:16)
+    at eval (eval at compile (C:\inetpub\wwwroot\oily\node_modules\ejs\lib\ejs.js:618:12), <anonymous>:11:17)
+    at returnedFn (C:\inetpub\wwwroot\oily\node_modules\ejs\lib\ejs.js:653:17)
+    at tryHandleCache (C:\inetpub\wwwroot\oily\node_modules\ejs\lib\ejs.js:251:36)
+    at View.exports.renderFile [as engine] (C:\inetpub\wwwroot\oily\node_modules\ejs\lib\ejs.js:482:10)
+    at View.render (C:\inetpub\wwwroot\oily\node_modules\express\lib\view.js:135:8)
+    at tryRender (C:\inetpub\wwwroot\oily\node_modules\express\lib\application.js:640:10)
+    at Function.render (C:\inetpub\wwwroot\oily\node_modules\express\lib\application.js:592:3)
+Error: C:\inetpub\wwwroot\oily\views\index.ejs:2
+    1| 
+ >> 2| <%- include('./partial/header'); -%>
+    3| 
+    4| Hello
+    5| <%- include('./partial/footer'); -%>
+
+Could not find the include file "./partial/header"
+    at getIncludePath (C:\inetpub\wwwroot\oily\node_modules\ejs\lib\ejs.js:162:13)
+    at includeFile (C:\inetpub\wwwroot\oily\node_modules\ejs\lib\ejs.js:288:19)
+    at include (C:\inetpub\wwwroot\oily\node_modules\ejs\lib\ejs.js:651:16)
+    at eval (eval at compile (C:\inetpub\wwwroot\oily\node_modules\ejs\lib\ejs.js:618:12), <anonymous>:11:17)
+    at returnedFn (C:\inetpub\wwwroot\oily\node_modules\ejs\lib\ejs.js:653:17)
+    at tryHandleCache (C:\inetpub\wwwroot\oily\node_modules\ejs\lib\ejs.js:251:36)
+    at View.exports.renderFile [as engine] (C:\inetpub\wwwroot\oily\node_modules\ejs\lib\ejs.js:482:10)
+    at View.render (C:\inetpub\wwwroot\oily\node_modules\express\lib\view.js:135:8)
+    at tryRender (C:\inetpub\wwwroot\oily\node_modules\express\lib\application.js:640:10)
+    at Function.render (C:\inetpub\wwwroot\oily\node_modules\express\lib\application.js:592:3)
+Error: Could not find the include file "&#39;./partial/header&#39;"
+    at getIncludePath (C:\inetpub\wwwroot\oily\node_modules\ejs\lib\ejs.js:162:13)
+    at includeSource (C:\inetpub\wwwroot\oily\node_modules\ejs\lib\ejs.js:306:17)
+    at C:\inetpub\wwwroot\oily\node_modules\ejs\lib\ejs.js:702:26
+    at Array.forEach (<anonymous>)
+    at Template.generateSource (C:\inetpub\wwwroot\oily\node_modules\ejs\lib\ejs.js:678:15)
+    at Template.compile (C:\inetpub\wwwroot\oily\node_modules\ejs\lib\ejs.js:557:12)
+    at Object.compile (C:\inetpub\wwwroot\oily\node_modules\ejs\lib\ejs.js:389:16)
+    at handleCache (C:\inetpub\wwwroot\oily\node_modules\ejs\lib\ejs.js:212:18)
+    at tryHandleCache (C:\inetpub\wwwroot\oily\node_modules\ejs\lib\ejs.js:251:16)
+    at View.exports.renderFile [as engine] (C:\inetpub\wwwroot\oily\node_modules\ejs\lib\ejs.js:482:10)
+Error: Could not find the include file "&#39;./partials/header&#39;"
+    at getIncludePath (C:\inetpub\wwwroot\oily\node_modules\ejs\lib\ejs.js:162:13)
+    at includeSource (C:\inetpub\wwwroot\oily\node_modules\ejs\lib\ejs.js:306:17)
+    at C:\inetpub\wwwroot\oily\node_modules\ejs\lib\ejs.js:702:26
+    at Array.forEach (<anonymous>)
+    at Template.generateSource (C:\inetpub\wwwroot\oily\node_modules\ejs\lib\ejs.js:678:15)
+    at Template.compile (C:\inetpub\wwwroot\oily\node_modules\ejs\lib\ejs.js:557:12)
+    at Object.compile (C:\inetpub\wwwroot\oily\node_modules\ejs\lib\ejs.js:389:16)
+    at handleCache (C:\inetpub\wwwroot\oily\node_modules\ejs\lib\ejs.js:212:18)
+    at tryHandleCache (C:\inetpub\wwwroot\oily\node_modules\ejs\lib\ejs.js:251:16)
+    at View.exports.renderFile [as engine] (C:\inetpub\wwwroot\oily\node_modules\ejs\lib\ejs.js:482:10)
+Error: Could not find the include file "&#39;partials/header&#39;"
+    at getIncludePath (C:\inetpub\wwwroot\oily\node_modules\ejs\lib\ejs.js:162:13)
+    at includeSource (C:\inetpub\wwwroot\oily\node_modules\ejs\lib\ejs.js:306:17)
+    at C:\inetpub\wwwroot\oily\node_modules\ejs\lib\ejs.js:702:26
+    at Array.forEach (<anonymous>)
+    at Template.generateSource (C:\inetpub\wwwroot\oily\node_modules\ejs\lib\ejs.js:678:15)
+    at Template.compile (C:\inetpub\wwwroot\oily\node_modules\ejs\lib\ejs.js:557:12)
+    at Object.compile (C:\inetpub\wwwroot\oily\node_modules\ejs\lib\ejs.js:389:16)
+    at handleCache (C:\inetpub\wwwroot\oily\node_modules\ejs\lib\ejs.js:212:18)
+    at tryHandleCache (C:\inetpub\wwwroot\oily\node_modules\ejs\lib\ejs.js:251:16)
+    at View.exports.renderFile [as engine] (C:\inetpub\wwwroot\oily\node_modules\ejs\lib\ejs.js:482:10)
+Error: Failed to lookup view "index" in views directory "./views"
+    at Function.render (C:\inetpub\wwwroot\oily\node_modules\express\lib\application.js:580:17)
+    at ServerResponse.render (C:\inetpub\wwwroot\oily\node_modules\express\lib\response.js:1008:7)
+    at C:\inetpub\wwwroot\oily\server.js:9:9
+    at Layer.handle [as handle_request] (C:\inetpub\wwwroot\oily\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\inetpub\wwwroot\oily\node_modules\express\lib\router\route.js:137:13)
+    at Route.dispatch (C:\inetpub\wwwroot\oily\node_modules\express\lib\router\route.js:112:3)
+    at Layer.handle [as handle_request] (C:\inetpub\wwwroot\oily\node_modules\express\lib\router\layer.js:95:5)
+    at C:\inetpub\wwwroot\oily\node_modules\express\lib\router\index.js:281:22
+    at Function.process_params (C:\inetpub\wwwroot\oily\node_modules\express\lib\router\index.js:335:12)
+    at next (C:\inetpub\wwwroot\oily\node_modules\express\lib\router\index.js:275:10)
+Error: Failed to lookup view "index" in views directory "./views"
+    at Function.render (C:\inetpub\wwwroot\oily\node_modules\express\lib\application.js:580:17)
+    at ServerResponse.render (C:\inetpub\wwwroot\oily\node_modules\express\lib\response.js:1008:7)
+    at C:\inetpub\wwwroot\oily\server.js:9:9
+    at Layer.handle [as handle_request] (C:\inetpub\wwwroot\oily\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\inetpub\wwwroot\oily\node_modules\express\lib\router\route.js:137:13)
+    at Route.dispatch (C:\inetpub\wwwroot\oily\node_modules\express\lib\router\route.js:112:3)
+    at Layer.handle [as handle_request] (C:\inetpub\wwwroot\oily\node_modules\express\lib\router\layer.js:95:5)
+    at C:\inetpub\wwwroot\oily\node_modules\express\lib\router\index.js:281:22
+    at Function.process_params (C:\inetpub\wwwroot\oily\node_modules\express\lib\router\index.js:335:12)
+    at next (C:\inetpub\wwwroot\oily\node_modules\express\lib\router\index.js:275:10)
+Error: Failed to lookup view "index" in views directory "./views"
+    at Function.render (C:\inetpub\wwwroot\oily\node_modules\express\lib\application.js:580:17)
+    at ServerResponse.render (C:\inetpub\wwwroot\oily\node_modules\express\lib\response.js:1008:7)
+    at C:\inetpub\wwwroot\oily\server.js:9:9
+    at Layer.handle [as handle_request] (C:\inetpub\wwwroot\oily\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\inetpub\wwwroot\oily\node_modules\express\lib\router\route.js:137:13)
+    at Route.dispatch (C:\inetpub\wwwroot\oily\node_modules\express\lib\router\route.js:112:3)
+    at Layer.handle [as handle_request] (C:\inetpub\wwwroot\oily\node_modules\express\lib\router\layer.js:95:5)
+    at C:\inetpub\wwwroot\oily\node_modules\express\lib\router\index.js:281:22
+    at Function.process_params (C:\inetpub\wwwroot\oily\node_modules\express\lib\router\index.js:335:12)
+    at next (C:\inetpub\wwwroot\oily\node_modules\express\lib\router\index.js:275:10)
+Error: Failed to lookup view "index" in views directory "./views"
+    at Function.render (C:\inetpub\wwwroot\oily\node_modules\express\lib\application.js:580:17)
+    at ServerResponse.render (C:\inetpub\wwwroot\oily\node_modules\express\lib\response.js:1008:7)
+    at C:\inetpub\wwwroot\oily\server.js:9:9
+    at Layer.handle [as handle_request] (C:\inetpub\wwwroot\oily\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\inetpub\wwwroot\oily\node_modules\express\lib\router\route.js:137:13)
+    at Route.dispatch (C:\inetpub\wwwroot\oily\node_modules\express\lib\router\route.js:112:3)
+    at Layer.handle [as handle_request] (C:\inetpub\wwwroot\oily\node_modules\express\lib\router\layer.js:95:5)
+    at C:\inetpub\wwwroot\oily\node_modules\express\lib\router\index.js:281:22
+    at Function.process_params (C:\inetpub\wwwroot\oily\node_modules\express\lib\router\index.js:335:12)
+    at next (C:\inetpub\wwwroot\oily\node_modules\express\lib\router\index.js:275:10)
+Error: Failed to lookup view "index" in views directory "./views"
+    at Function.render (C:\inetpub\wwwroot\oily\node_modules\express\lib\application.js:580:17)
+    at ServerResponse.render (C:\inetpub\wwwroot\oily\node_modules\express\lib\response.js:1008:7)
+    at C:\inetpub\wwwroot\oily\server.js:9:9
+    at Layer.handle [as handle_request] (C:\inetpub\wwwroot\oily\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\inetpub\wwwroot\oily\node_modules\express\lib\router\route.js:137:13)
+    at Route.dispatch (C:\inetpub\wwwroot\oily\node_modules\express\lib\router\route.js:112:3)
+    at Layer.handle [as handle_request] (C:\inetpub\wwwroot\oily\node_modules\express\lib\router\layer.js:95:5)
+    at C:\inetpub\wwwroot\oily\node_modules\express\lib\router\index.js:281:22
+    at Function.process_params (C:\inetpub\wwwroot\oily\node_modules\express\lib\router\index.js:335:12)
+    at next (C:\inetpub\wwwroot\oily\node_modules\express\lib\router\index.js:275:10)
+Error: Failed to lookup view "index" in views directory "./views"
+    at Function.render (C:\inetpub\wwwroot\oily\node_modules\express\lib\application.js:580:17)
+    at ServerResponse.render (C:\inetpub\wwwroot\oily\node_modules\express\lib\response.js:1008:7)
+    at C:\inetpub\wwwroot\oily\server.js:9:9
+    at Layer.handle [as handle_request] (C:\inetpub\wwwroot\oily\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\inetpub\wwwroot\oily\node_modules\express\lib\router\route.js:137:13)
+    at Route.dispatch (C:\inetpub\wwwroot\oily\node_modules\express\lib\router\route.js:112:3)
+    at Layer.handle [as handle_request] (C:\inetpub\wwwroot\oily\node_modules\express\lib\router\layer.js:95:5)
+    at C:\inetpub\wwwroot\oily\node_modules\express\lib\router\index.js:281:22
+    at Function.process_params (C:\inetpub\wwwroot\oily\node_modules\express\lib\router\index.js:335:12)
+    at next (C:\inetpub\wwwroot\oily\node_modules\express\lib\router\index.js:275:10)
