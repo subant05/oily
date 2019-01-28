@@ -1,7 +1,9 @@
 var gulp = require('gulp');
 var less = require('gulp-less');
-var babel = require('gulp-buble');
+var babel = require('gulp-babel');
+var webpack = require('webpack-stream');
 var concat = require('gulp-concat');
+var sourcemaps = require("gulp-sourcemaps");
 var uglify = require('gulp-uglify');
 var rename = require('gulp-rename');
 var cleanCSS = require('gulp-clean-css');
@@ -13,7 +15,7 @@ const paths = {
     dest: 'public/style/'
   },
   scripts: {
-    src: 'javascripts/**/*.js',
+    src: 'javascript/**/*.js',
     dest: 'public/js/'
   }
 };
@@ -37,17 +39,34 @@ function styles() {
     .pipe(cleanCSS())
     // pass in options to the stream
     .pipe(rename({
-      basename: 'oily',
       suffix: '.min'
     }))
     .pipe(gulp.dest(paths.styles.dest));
 }
  
 function scripts() {
-  return gulp.src(paths.scripts.src, { sourcemaps: true })
-    .pipe(babel())
+  return gulp.src('javascript/app.js', { sourcemaps: true })
+    .pipe(sourcemaps.init())
+    .pipe(webpack( {
+      mode: "development",
+      module: {
+          rules: [
+            {
+              test: /\.m?js$/,
+              exclude: /(node_modules|bower_components)/,
+              use: {
+                loader: 'babel-loader',
+                options: {
+                  presets: ['@babel/preset-env']
+                }
+              }
+            }
+          ]
+      }
+    }))
     .pipe(uglify())
     .pipe(concat('oily.min.js'))
+    .pipe(sourcemaps.write("."))
     .pipe(gulp.dest(paths.scripts.dest));
 }
  

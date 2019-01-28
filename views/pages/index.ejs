@@ -1,3 +1,35 @@
 <%- include('../partials/header'); -%>
-<%= message %>
+<div class="row">
+    <div class="nine columns">
+        <input class="u-full-width" type="text" placeholder="<%= search.placeholder %>" id="lookup">
+    </div>
+    <div class="three columns">
+           <button class="button search">Search</button>
+    </div>
+</div> 
+<div class="row">
+    <div class="twelve columns results">
+            <div class="card">
+                <img src="https://images-na.ssl-images-amazon.com/images/I/41u9YGyo4OL.jpg" alt="Avatar" style="width:100%">
+                <div class="container">
+                    <h4><b>Cold Remedy</b></h4> 
+                    <p>Architect & Engineer</p> 
+                </div>
+            </div>
+            <div class="card">
+                    <img src="https://images-na.ssl-images-amazon.com/images/I/41u9YGyo4OL.jpg" alt="Avatar" style="width:100%">
+                    <div class="container">
+                        <h4><b>Soothing</b></h4> 
+                        <p>Architect & Engineer</p> 
+                    </div>
+                </div>
+                <div class="card">
+                        <img src="https://images-na.ssl-images-amazon.com/images/I/41u9YGyo4OL.jpg" alt="Avatar" style="width:100%">
+                        <div class="container">
+                            <h4><b>Relax</b></h4> 
+                            <p>Architect & Engineer</p> 
+                        </div>
+                    </div>
+    </div>
+</div>
 <%- include('../partials/footer'); -%>

@@ -1,19 +1,32 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
+    <meta charset="utf-8">
     <title><%= title %></title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+    <link rel="icon" type="image/png" href="images/favicon.png">
     <link type="text/css" rel="stylesheet" href="style/skeleton/css/normalize.css"/>
     <link type="text/css" rel="stylesheet" href="style/skeleton/css/skeleton.css"/>
     <link type="text/css" rel="stylesheet" href="style/oily.min.css"/>
-
+    <link type="text/css" rel="stylesheet" href="style/responsive/mobile.min.css"/>
+    <link type="text/css" rel="stylesheet" href="style/responsive/phablet.min.css"/>
+    <link type="text/css" rel="stylesheet" href="style/responsive/tablet.min.css"/>
+    <link type="text/css" rel="stylesheet" href="style/responsive/desktop.min.css"/>
+    <link type="text/css" rel="stylesheet" href="style/responsive/desktop-hd.min.css"/>
 </head>
 <body>
 <header>
-        <ul>
-                <li>Oily</li>
-                <li></li>
-                <li></li>
-                <li></li>
-        </ul>    
+        <div class="row">
+                <div class="two columns logo-spacer"> &nbsp;</div>
+                <div class="ten columns">
+                        <h1>Oilchemist</h1>
+                </div>  
+        </div>
 </header>
-<content>
+<main>
+<div class="row">
+<%- include('./navbar'); -%>
+<section class="ten columns content">
