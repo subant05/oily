@@ -34,7 +34,7 @@ function clean() {
  * Define our tasks using plain functions
  */
 function styles() {
-  return gulp.src(paths.styles.src)
+  return gulp.src('less/oily.less' )
     .pipe(less())
     .pipe(cleanCSS())
     // pass in options to the stream

@@ -1,0 +1,29 @@
+@white: #fff;
+@black: #000;
+@super-light-gray:#bbb;
+@light-gray:#ccc;
+@shadow-color: rgba(0,0,0,0.2);
+
+// //Mixins
+
+.shadow(@h-offset; @v-offset; @blur; @spread; @spread-color){
+    box-shadow: @h-offset @v-offset @blur @spread @spread-color;
+}
+
+.round-borders (@radius) {
+    border-radius: @radius;
+    -moz-border-radius: @radius;
+    -webkit-border-radius: @radius;
+}
+// Common Mixins
+.common-border(@bdrcolor){
+    border: 1px solid @bdrcolor;
+}
+.common-shadow(@v-offset){
+    @blur: @v-offset*2;
+    .shadow(0; @v-offset; @blur; 0; @shadow-color);
+    transition: 0.3s;
+}
+.common-border-radius(){
+    .round-borders(5px);
+}
