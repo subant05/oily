@@ -21,6 +21,8 @@ section.content{
         .common-border(@super-light-gray)
     }
     .card {
+        max-width:220px;
+
         .common-shadow(1px);
         // flex-shrink:1;
         padding:10px;
@@ -29,6 +31,26 @@ section.content{
         .common-border-radius;
         &:hover {
             .common-shadow(12px);
+        }
+        .container p{
+            max-height:100px;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+        }
+        rating div.rating-container{
+            list-style: none;
+            width: 80%;
+            margin: 0 auto;
+            ul,div{
+                display:inline-block;
+                font-size: 1.55rem;
+            }
+            
+            .review-count{
+                float:right;
+                font-weight: bold;
+            }
         }
         img{
             width:auto;

@@ -8,6 +8,7 @@ var uglify = require('gulp-uglify');
 var rename = require('gulp-rename');
 var cleanCSS = require('gulp-clean-css');
 var del = require('del');
+var riot = require('gulp-riot');
  
 const paths = {
   styles: {
@@ -17,6 +18,14 @@ const paths = {
   scripts: {
     src: 'javascript/**/*.js',
     dest: 'public/js/'
+  }
+  , icons:{
+    src:'less/icons/**/*'
+    , dest:'public/style/icons/'
+  }
+  , tags:{
+    src:'tags/**/*'
+    , dest:'public/components/'
   }
 };
  
@@ -33,6 +42,10 @@ function clean() {
 /*
  * Define our tasks using plain functions
  */
+function icons(){
+  return gulp.src(paths.icons.src)
+  .pipe(gulp.dest(paths.icons.dest));
+}
 function styles() {
   return gulp.src('less/oily.less' )
     .pipe(less())
@@ -43,7 +56,6 @@ function styles() {
     }))
     .pipe(gulp.dest(paths.styles.dest));
 }
- 
 function scripts() {
   return gulp.src('javascript/app.js', { sourcemaps: true })
     .pipe(sourcemaps.init())
@@ -69,10 +81,20 @@ function scripts() {
     .pipe(sourcemaps.write("."))
     .pipe(gulp.dest(paths.scripts.dest));
 }
- 
+function riotTask(){
+   return gulp.src(['node_modules/riot/riot.min.js',paths.tags.src])
+        .pipe(riot({type:"es6"}))
+        .pipe(uglify())
+        .pipe(concat('oily-components.js'))
+        .pipe(gulp.dest(paths.tags.dest));
+} 
+
+
 function watch() {
   gulp.watch(paths.scripts.src, scripts);
   gulp.watch(paths.styles.src, styles);
+  gulp.watch(paths.icons.src, icons);
+  gulp.watch(paths.tags.src, riotTask);
 }
  
 /*

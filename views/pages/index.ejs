@@ -14,27 +14,14 @@
 </div> 
 <div class="row">
     <div class="twelve columns results">
-            <div class="card">
-                <img src="https://images-na.ssl-images-amazon.com/images/I/41u9YGyo4OL.jpg" alt="Avatar" >
-                <div class="container">
-                    <h5><b>Cold Remedy</b></h5> 
-                    <p>Architect & Engineer</p> 
-                </div>
-            </div>
-            <div class="card">
-                    <img src="https://images-na.ssl-images-amazon.com/images/I/41u9YGyo4OL.jpg" alt="Avatar" >
-                    <div class="container">
-                        <h5><b>Soothing</b></h5> 
-                        <p>Architect & Engineer</p> 
-                    </div>
-                </div>
-                <div class="card">
-                        <img src="https://images-na.ssl-images-amazon.com/images/I/41u9YGyo4OL.jpg" alt="Avatar" >
-                        <div class="container">
-                            <h5><b>Relax</b></h5> 
-                            <p>Architect & Engineer</p> 
-                        </div>
-                    </div>
+        <% searchResults.forEach(function(item){ %>
+            <card
+                src='<%= item.img %>'
+                title="<%= item.title %>"
+                description="<%= item.description %>">
+                <rating ranking="<%= item.ranking %>" count="<%= item.reviewCount %>"></rating>
+            </card>
+        <% }); %>
     </div>
 </div>
 <%- include('../partials/footer'); -%>
