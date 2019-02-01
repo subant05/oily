@@ -7,11 +7,14 @@ route.use(function timeLog (req, res, next) {
 })
 // define the home page route
 route.get('/', function (req, res) {
+    const riot =  require('riot')
+        , searchTag = riot.render(require('../tags/search-form.tag'));
     res.render('pages/index'
     , { title: 'Oily'
-        , search:{
-            placeholder: 'Search...'
+        ,tags:{
+            searchTag
         } 
+        
         , searchResults:[
             {
                 img:"https://images-na.ssl-images-amazon.com/images/I/41u9YGyo4OL.jpg"
@@ -26,7 +29,9 @@ route.get('/', function (req, res) {
                 , description:"Mediation blend that is amazing. Let the blend help you to relax and get in the mood to meditate."
                 , ranking: 4.3
                 , reviewCount:96
-            }]
+            }
+        ]
+        , data:{}
     })
 })
 // define the about route

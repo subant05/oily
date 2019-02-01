@@ -1,19 +1,12 @@
 <%- include('../partials/header'); -%>
 <div class="row">
-    <form id="search-index">
-        <div class="eight columns search-input-column">
-            <input class="u-full-width" type="text" placeholder="<%= search.placeholder %>" id="lookup">
-        </div>
-        <div class="two columns search-button-column">
-            <button class="button search  button-secondary ">Search</button>
-        </div>
-        <div class="one columns search-filter-column">
-            <button class="button search icon-filter"> </button>
-        </div>
-    </form>
+    <!--begin: search form-->
+    <%- tags.searchTag %>
+    <!--end: search form-->
 </div> 
 <div class="row">
     <div class="twelve columns results">
+        <!-- begin: search results -->
         <% searchResults.forEach(function(item){ %>
             <card
                 src='<%= item.img %>'
@@ -22,6 +15,7 @@
                 <rating ranking="<%= item.ranking %>" count="<%= item.reviewCount %>"></rating>
             </card>
         <% }); %>
+        <!-- end: search results -->
     </div>
 </div>
 <%- include('../partials/footer'); -%>

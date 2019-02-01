@@ -3,6 +3,7 @@ var less = require('gulp-less');
 var babel = require('gulp-babel');
 var webpack = require('webpack-stream');
 var concat = require('gulp-concat');
+var buble =  require('gulp-buble');
 var sourcemaps = require("gulp-sourcemaps");
 var uglify = require('gulp-uglify');
 var rename = require('gulp-rename');
@@ -84,6 +85,7 @@ function scripts() {
 function riotTask(){
    return gulp.src(['node_modules/riot/riot.min.js',paths.tags.src])
         .pipe(riot({type:"es6"}))
+        .pipe(buble())
         .pipe(uglify())
         .pipe(concat('oily-components.js'))
         .pipe(gulp.dest(paths.tags.dest));
