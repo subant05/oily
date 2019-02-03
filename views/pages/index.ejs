@@ -1,21 +1,3 @@
 <%- include('../partials/header'); -%>
-<div class="row">
-    <!--begin: search form-->
-    <%- tags.searchTag %>
-    <!--end: search form-->
-</div> 
-<div class="row">
-    <div class="twelve columns results">
-        <!-- begin: search results -->
-        <% searchResults.forEach(function(item){ %>
-            <card
-                src='<%= item.img %>'
-                title="<%= item.title %>"
-                description="<%= item.description %>">
-                <rating ranking="<%= item.ranking %>" count="<%= item.reviewCount %>"></rating>
-            </card>
-        <% }); %>
-        <!-- end: search results -->
-    </div>
-</div>
+<%- oilSearchPage %>
 <%- include('../partials/footer'); -%>

@@ -1,4 +1,4 @@
-<rating>
+<oil-rating>
     <div class="rating-container">
         <div>
         <ul class="stars {enabled:enabled}">
@@ -43,4 +43,4 @@
             cursor:pointer;
         }
     </style>
-</rating>
+</oil-rating>
