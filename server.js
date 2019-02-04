@@ -3,8 +3,6 @@ const express = require('express')
     ,   routes = require("./routes")
 
 
-    
-
  /*************************
  * Views
  *************************/

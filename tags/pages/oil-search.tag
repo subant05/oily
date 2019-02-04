@@ -4,12 +4,14 @@
     </div> 
     <div class="row">
         <div class="twelve columns results">
-                <oil-card  each={results}
+            <a  each={results} href="#" alt="{title}">
+                <oil-card 
                     src="{src}" 
                     title="{title}"
                     description="{description}"
                     ranking="{ranking}" 
-                    count="{count}"/>
+                    count="{count}" />
+            </a>
         </div>
     </div>
     <oil-pagination pages={pages}></oil-pagination>

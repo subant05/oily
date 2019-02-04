@@ -1,8 +1,12 @@
 <oii-navigation>
     <nav class="two columns ">
-        <ul>
+        <ul refs="login" onclick={login}>
                 <li><a herf="#" class="button button-secondary">Log In</a></li>
                 <li><a herf="#" class="button button-primary">Sign Up</a></li>
         </ul> 
     </nav>
+    <script>
+        this.login = function(){
+        }
+    </script>
 </oii-navigation>
