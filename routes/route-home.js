@@ -1,17 +1,7 @@
 const express = require('express');
 const route = express.Router();
 const riot =  require('riot');
-const components ={
-    searchTag : require('../tags/components/oil-search-form.tag')
-    , searchCardTag : require('../tags/components/oil-card.tag')
-    , rating : require('../tags/components/oil-rating.tag')
-    , oilSummary : require('../tags/components/oil-summary.tag')
-    , oilPagination : require('../tags/components/oil-pagination.tag')
-
-}
-const pages = {
-    oilSearch : require('../tags/pages/oil-search.tag')
-}
+const tags = require("../tags");
 
 route.use(function timeLog (req, res, next) {
     // console.log('Time: ', Date.now())
@@ -21,7 +11,7 @@ route.use(function timeLog (req, res, next) {
 route.get('/', function (req, res) {
     const data = { 
         placeholder: "Search.."
-        , pages:10
+        , pages:20
         , results :[
                         {
                             src:"https://images-na.ssl-images-amazon.com/images/I/41u9YGyo4OL.jpg"
@@ -87,7 +77,7 @@ route.get('/', function (req, res) {
                             , count:"96"
                         }
             ]};
-    const oilSearchPage = riot.render(pages.oilSearch, data)               
+    const oilSearchPage = riot.render(tags.pages.oilSearch, data)               
     res.render('pages/index', { 
         title: 'Oily'
         , oilSearchPage

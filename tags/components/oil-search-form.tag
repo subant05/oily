@@ -7,10 +7,8 @@
             <button class="button search  button-secondary ">Search</button>
         </div>
         <div class="one columns search-filter-column">
-            <label class="switch">
-                <input type="checkbox">
-                <span class="slider"></span>
-            </label>        </div>
+            <oil-switch data-ref="filter"></oil-switch>
+        </div>
     </form>
     <script>
         function submitHanlder(e){

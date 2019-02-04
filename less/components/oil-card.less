@@ -1,0 +1,29 @@
+.card {
+    max-width:220px;
+
+    .common-shadow(1px);
+    // flex-shrink:1;
+    padding:10px;
+    margin:5px;
+    .common-border( @light-gray);
+    .common-border-radius;
+    &:hover {
+        .common-shadow(12px);
+    }
+    .container p{
+        max-height:100px;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+    }
+
+    img{
+        width:auto;
+        max-height:100px;
+        position: relative;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+}

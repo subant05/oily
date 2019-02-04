@@ -1,18 +1,14 @@
 <oil-pagination>
     <div class="row">
         <div class="twelve columns">
-            <div  class="one columns prev">
-                <a href="?page=prev" class="{hide : hidePrev}">
-                    <
-                </a>
+            <div class="one columns prev {hide : hidePrev}">
+                <a href="?page=next">  </a>
             </div>
             <div class="one columns numbers" each={ name, i in pages}>
                 <a href="?page={name}" class="">{name}</a>
             </div> 
-            <div class="one columns next">
-                <a href="?page=next" class="{hide : hideNext}">
-                    >
-                </a>
+            <div class="one columns next {hide : hideNext}">
+                <a href="?page=next">  </a>
             </div>
         </div>
     </div>
@@ -23,7 +19,6 @@
             if(typeof opts.pages === "number"){
                 count = opts.pages
                 do{
-                    console.log(count ,opts.pages)
                     arr.unshift(count--)
                 }while(arr.length < opts.pages &&  arr.length !== 10)
                 this.pages = arr;
@@ -35,8 +30,5 @@
         this.on("mount",updatePagination)
     </script>
     <style>
-        .hide{
-            display:none !important;
-        }
     </style>
 </oil-pagination>
