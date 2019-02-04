@@ -17,9 +17,7 @@ app.use(express.static('./public'));
  * Router
  *************************/
 app.use("/", routes.home);
-app.get("*", function(req,res){
-    res.render('pages/404',{title:404,navigation:"",data:{}})
-})
+app.get("*", routes.error);
 
 
 /*************************
