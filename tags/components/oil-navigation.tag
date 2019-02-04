@@ -1,0 +1,8 @@
+<oii-navigation>
+    <nav class="two columns ">
+        <ul>
+                <li><a herf="#" class="button button-secondary">Log In</a></li>
+                <li><a herf="#" class="button button-primary">Sign Up</a></li>
+        </ul> 
+    </nav>
+</oii-navigation>

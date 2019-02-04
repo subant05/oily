@@ -77,9 +77,11 @@ route.get('/', function (req, res) {
                             , count:"96"
                         }
             ]};
+    const navigation = riot.render(tags.components.oilNavigation, data)  
     const oilSearchPage = riot.render(tags.pages.oilSearch, data)               
     res.render('pages/index', { 
         title: 'Oily'
+        , navigation
         , oilSearchPage
         , data
     })

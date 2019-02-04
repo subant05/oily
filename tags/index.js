@@ -5,6 +5,8 @@ const components ={
     , oilSummary : require('./components/oil-summary.tag')
     , oilPagination : require('./components/oil-pagination.tag')
     , oilSwitch : require('./components/oil-switch.tag')
+    , oilNavigation : require('./components/oil-navigation.tag')
+
 }
 const pages = {
     oilSearch : require('./pages/oil-search.tag')
