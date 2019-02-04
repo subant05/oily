@@ -83,7 +83,7 @@ function scripts() {
     .pipe(gulp.dest(paths.scripts.dest));
 }
 function riotTask(){
-   return gulp.src(['node_modules/riot/riot.min.js',paths.tags.src])
+   return gulp.src([paths.tags.src])
         .pipe(riot({type:"es6"}))
         .pipe(buble())
         .pipe(uglify())

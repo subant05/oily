@@ -1,9 +1,9 @@
 <oil-card>
     <div class="card">
-        <yield></yield>
+        <oil-summary src="{src}" title="{title}" description="{description}"></oil-summary>
+        <oil-rating if={ranking && count } ranking="{ranking}" count="{count}"></oil-rating>
     </div>
     <script>
-        this.json = JSON.stringify(this)
         this.src = opts.src || opts.riotSrc
         this.title = opts.title;
         this.description = opts.description

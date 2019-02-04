@@ -1,31 +1,33 @@
 <oil-search>
     <div class="row">
-        <oil-search-form placeholder={placeholder} value={value}></oil-search-form>
+        <oil-search-form data-ref="searchBar" placeholder={placeholder} value={value}></oil-search-form>
     </div> 
     <div class="row">
         <div class="twelve columns results">
-            <div each={results}>
-                <oil-search-card 
+                <oil-card  each={results}
                     src="{src}" 
                     title="{title}"
                     description="{description}"
                     ranking="{ranking}" 
                     count="{count}"/>
-            </div>
         </div>
     </div>
+    <oil-pagination pages={pages}></oil-pagination>
     <script>
-        this.placeholder = opts.placeholder;
-        this.value = opts.value;
-        this.results = opts.results
-        this.ranking = opts.ranking
-        this.count = opts.count
+        function submit(value){
+            this.searchValue = value.trim();
+        }
         this.on("mount",()=>{
-            this.placeholder = opts.placeholder;
-            this.value = opts.value;
-            this.results = opts.results
-            this.ranking = opts.ranking
-            this.count = opts.count
+            this.refs.searchBar.on("submit",submit)
+            if( !this.setProperties){
+                this.placeholder = opts.placeholder;
+                this.value = opts.value;
+                this.results = opts.results
+                this.ranking = opts.ranking
+                this.count = opts.count
+                this.pages = opts.pages;
+                this.update();
+            }
         })
     </script>
     <style>
