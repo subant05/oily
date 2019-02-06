@@ -1,7 +1,8 @@
 const express = require('express');
 const route = express.Router();
 const riot =  require('riot');
-const tags = require("./load-components");
+const tags = require("./riot-includes/load-components");
+const observable = require('./riot-includes/observable');
 
 route.use(function timeLog (req, res, next) {
     next()

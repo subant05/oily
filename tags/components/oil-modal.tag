@@ -6,10 +6,9 @@
     </div>
     <script>
        this.show = true;
+       console.log(this)
        this.hideModal =  function(){
            this.show = false;
        }
-       this.on("mount", function(){
-       })
     </script>
 </oil-modal>
