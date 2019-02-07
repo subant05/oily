@@ -2,7 +2,6 @@ const express = require('express');
 const route = express.Router();
 const riot =  require('riot');
 const tags = require("./riot-includes/load-components");
-const observable = require('./riot-includes/observable')
 
 route.use(function timeLog (req, res, next) {
     // console.log('Time: ', Date.now())
@@ -13,7 +12,6 @@ route.get('/', function (req, res) {
     const data = { 
         placeholder: "Search.."
         , pages:20
-        , messaging :  new observable({data:[]})
         , results :[
                         {
                             src:"https://images-na.ssl-images-amazon.com/images/I/41u9YGyo4OL.jpg"

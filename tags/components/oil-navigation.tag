@@ -7,7 +7,7 @@
     </nav>
     <script>
         this.login = function(){
-            window.grease.trigger("change")
+           this.drip.trigger("login")
         }
     </script>
 </oii-navigation>

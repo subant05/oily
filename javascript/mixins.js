@@ -1,4 +1,7 @@
-const globalMixin = {
+import MessageCenter from './observable';
+import Lubrication from './observable';
+const drip = new Lubrication();
+const oilyMix = {
     // the `opts` argument is the option object received by the tag as well
     init: function(opts) {
         this.on('updated', (e)=> { 
@@ -6,6 +9,10 @@ const globalMixin = {
         })
         this.on("mount",e=>{
             this.setProperties();
+            this.drip = drip;
+            // this.on("*"
+            //     , ()=>setTimeout(this.update.bind(this),0)
+            // )
         })
     }  
     , getOpts: function() {
@@ -22,4 +29,4 @@ const globalMixin = {
         this.update()
     }
   }
-export { globalMixin }
+export { oilyMix }
