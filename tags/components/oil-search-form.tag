@@ -1,6 +1,6 @@
 <oil-search-form>
     <form id="search-index" onsubmit={submitHanlder} method="get">
-        <div class="eight columns search-input-column">
+        <div class="nine columns search-input-column">
             <input ref="search" name="search" class="u-full-width" type="text" placeholder="{placeholder}" id="lookup">
         </div>
         <div class="two columns search-button-column">

@@ -3,9 +3,8 @@
         <div>
         <ul class="stars {enabled:enabled}">
             <li each={className, i in rate} class="icon-star-{className}"></li>
+            <li class="review-count">{count}</li>
         </ul>
-        </div>
-        <div class="review-count">{count}</div>
     </div>
     <script type="es6">
         this.enabled =  this.opts.enabled;
@@ -38,6 +37,9 @@
         }
         li{
             display:inline;
+        }
+        li:last-of-type{
+            margin-left:20px;
         }
         .enabled{
             cursor:pointer;
