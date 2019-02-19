@@ -6,16 +6,21 @@
     button.search{
         float: none;
     }
-    .card {
-        width:calc(27%);
-        min-width:100px;
-      }
-    .content .results .card{
-        width: 100%;
-    }
-    oil-search-form .search-filter-column oil-switch  label.switch{
-        float:right;
-    }
+
+    .content .results{
+        display: flex;
+        flex-wrap: wrap;
+
+        .card{
+            width:calc(209px - 5px);
+            height:300px;
+            margin-bottom:10px;
+            img{
+    
+                max-height: 100px;
+            }
+        }
+    } 
 }
 @media (max-width:980px){
     form#search-index{

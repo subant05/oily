@@ -14,7 +14,6 @@
             </a>
         </div>
     </div>
-    <oil-pagination pages={pages}></oil-pagination>
     <script>
         function submit(value){
             this.searchValue = value.trim();

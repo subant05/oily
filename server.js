@@ -14,6 +14,7 @@ app.use(express.static('./public'));
 /*************************
  * Router
  *************************/
+app.use("/blend", routes.blend);
 app.use("/", routes.home);
 app.get("*", routes.error);
 

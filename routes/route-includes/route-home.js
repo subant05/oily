@@ -1,7 +1,7 @@
 const express = require('express');
 const route = express.Router();
 const riot =  require('riot');
-const tags = require("./riot-includes/load-components");
+const riotIncludes = require("../riot-includes");
 
 route.use(function timeLog (req, res, next) {
     // console.log('Time: ', Date.now())
@@ -77,9 +77,9 @@ route.get('/', function (req, res) {
                             , count:"96"
                         }
             ]};
-    const navigation = riot.render(tags.components.oilNavigation) 
-    const modal = riot.render(tags.components.oilModal) 
-    const oilSearchPage = riot.render(tags.pages.oilSearch, data)               
+    const navigation = riot.render(riotIncludes.components.oilNavigation) 
+    const modal = riot.render(riotIncludes.components.oilModal) 
+    const oilSearchPage = riot.render(riotIncludes.pages.oilSearch, data)               
     res.render('pages/index', { 
         title: 'Oily'
         , navigation

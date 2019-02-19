@@ -1,5 +1,6 @@
 const routes = {
-    home : require("./route-home")
-    , error: require("./route-404")
+    home : require("./route-includes/route-home")
+    , error: require("./route-includes/route-404")
+    , blend: require("./route-includes/blend")
 }
 module.exports  = routes
