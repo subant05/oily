@@ -23,25 +23,6 @@
                         </p>
                         <div class="submitter__description">"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas tincidunt sollicitudin congue. Vestibulum lobortis placerat hendrerit. Vivamus diam metus, pulvinar ac faucibus nec, dictum id velit. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum in arcu magna. Cras vitae ipsum accumsan, consequat nisl eu, pretium augue. Suspendisse at ullamcorper libero."</div>
                     </div>
-                    <div class="social-media-share">
-                        <ul>
-                                <!-- Facebook -->
-                                <div class="fb-share-button" 
-                                    data-href="{shareURI}" 
-                                    data-layout="button" data-size="large">
-                                        <a target="_blank" 
-                                            href="https://www.facebook.com/sharer/sharer.php?u={shareURI}&amp;src=sdkpreparse" 
-                                            class="fb-xfbml-parse-ignore"></a>
-                                </div>
-                            </li>
-                            <li>
-                                <!-- Twitter -->
-                                <div class="twitter-share-button">
-                                    <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-size="large" data-show-count="false">Tweet</a>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
                     <div class="formula">
                         <h5>Formula</h5>
                         <ul>

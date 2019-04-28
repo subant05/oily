@@ -8,6 +8,7 @@ const components ={
     , oilSwitch : require('../../tags/components/oil-switch.tag')
     , oilNavigation : require('../../tags/components/oil-navigation.tag')
     , oilModal : require('../../tags/components/oil-modal.tag')
+    , oilSocialMedia : require('../../tags/components/oil-social-media.tag')
 
 }
 const pages = {
