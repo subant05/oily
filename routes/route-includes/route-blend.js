@@ -6,21 +6,27 @@ const navigation = riotIncludes.navigation;
 const modal = riotIncludes.modal;
 
 route.use(function log(req,res,next){
-    console.log(req)
+    // console.log(req)
+    console.log("We Hitting")
+
     next();
 });
 
 route.get('/', function (req, res) {
+    console.log("We Hitting")
+    const data = {
+        shareURI:"http://oily.anthony.com/blend"
+    };
     
-    const detail = riot.render(riotIncludes.pages.oilBlendDetail);
+    const detail = riot.render(riotIncludes.pages.oilBlendDetail, data);
 
     res.render('pages/blend', { 
         title: 'Oily - Blend'
         , detail       
         , navigation
         , modal
-        , data:{}
-    })
+        , data
+    });
 });
 
 module.exports =  route;

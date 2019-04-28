@@ -2,6 +2,8 @@ const express = require('express');
 const route = express.Router();
 const riot =  require('riot');
 const riotIncludes = require("../riot-includes");
+const navigation = riot.render(riotIncludes.components.oilNavigation) 
+const modal = riot.render(riotIncludes.components.oilModal) 
 
 route.use(function timeLog (req, res, next) {
     // console.log('Time: ', Date.now())
@@ -77,8 +79,8 @@ route.get('/', function (req, res) {
                             , count:"96"
                         }
             ]};
-    const navigation = riot.render(riotIncludes.components.oilNavigation) 
-    const modal = riot.render(riotIncludes.components.oilModal) 
+
+    console.log(data)
     const oilSearchPage = riot.render(riotIncludes.pages.oilSearch, data)               
     res.render('pages/index', { 
         title: 'Oily'
@@ -87,10 +89,6 @@ route.get('/', function (req, res) {
         , oilSearchPage
         , data
     })
-})
-// define the about route
-// route.get('/about', function (req, res) {
-//     res.send('About birds')
-// })
+});
 
 module.exports = route;
