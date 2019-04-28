@@ -17,9 +17,11 @@
     <script>
         function submit(value){
             this.searchValue = value.trim();
+            console.log("Event Emmited from search-form component: ", this.searchValue)
         }
         this.on("mount",()=>{
-            this.refs.searchBar.on("submit",submit)
+            this.refs.searchBar.on("submit",submit);
+
             if( !this.setProperties){
                 this.placeholder = opts.placeholder;
                 this.value = opts.value;

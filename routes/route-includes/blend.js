@@ -10,7 +10,7 @@ route.use(function log(req,res,next){
     next();
 });
 
-route.get('/', function (req, res) {
+route.get('/blend', function (req, res) {
     res.render('pages/blend', { 
         title: 'Oily - Blend'
         , message: "Some Blend ... "
