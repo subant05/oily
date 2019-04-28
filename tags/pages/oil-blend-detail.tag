@@ -62,10 +62,10 @@
         </div>
     </div>
     <script>
-        this.shareURI = this.opts.shareurl;
+        this.shareURI = this.opts.shareURI;
         this.on("mount", ()=>{
              if( !this.setProperties){
-                this.shareURI = encodeURIComponent(this.opts.shareurl);
+                this.shareURI = encodeURIComponent(this.opts.shareURI);
                 this.update();
             }
         })
