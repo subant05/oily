@@ -8,9 +8,12 @@ const components ={
     , oilSwitch : require('../../tags/components/oil-switch.tag')
     , oilNavigation : require('../../tags/components/oil-navigation.tag')
     , oilModal : require('../../tags/components/oil-modal.tag')
+
 }
 const pages = {
     oilSearch : require('../../tags/pages/oil-search.tag')
+    , oilBlendDetail : require('../../tags/pages/oil-blend-detail.tag')
+
 }
 const navigation = riot.render(components.oilNavigation) 
 const modal = riot.render(components.oilModal)

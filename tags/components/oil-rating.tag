@@ -1,10 +1,13 @@
 <oil-rating>
     <div class="rating-container">
-        <div>
         <ul class="stars {enabled:enabled}">
             <li each={className, i in rate} class="icon-star-{className}"></li>
             <li class="review-count">{count}</li>
         </ul>
+        <span itemprop="aggregateRating" itemscope="" itemtype="http://schema.org/AggregateRating" class="aggregate-rating">
+            <meta itemprop="ratingValue" content="{rate}">
+            <meta itemprop="reviewCount" content="{count}">
+        </span>
     </div>
     <script type="es6">
         this.enabled =  this.opts.enabled;
