@@ -80,7 +80,6 @@ route.get('/', function (req, res) {
                         }
             ]};
 
-    console.log(data)
     const oilSearchPage = riot.render(riotIncludes.pages.oilSearch, data)               
     res.render('pages/index', { 
         title: 'Oily'

@@ -9,11 +9,16 @@ const components ={
     , oilNavigation : require('../../tags/components/oil-navigation.tag')
     , oilModal : require('../../tags/components/oil-modal.tag')
     , oilSocialMedia : require('../../tags/components/oil-social-media.tag')
+    , oilTable : require('../../tags/components/oil-table.tag')
+
 
 }
 const pages = {
     oilSearch : require('../../tags/pages/oil-search.tag')
     , oilBlendDetail : require('../../tags/pages/oil-blend-detail.tag')
+    , admin :{
+         oilAdminDashboard : require('../../tags/pages/admin/oil-admin-dashboard.tag')
+    }
 
 }
 const navigation = riot.render(components.oilNavigation) 

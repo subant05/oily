@@ -25,7 +25,7 @@ app.use(express.static('./public'));
 /*************************
  * Router
  *************************/
-app.use("/admin/signin", routes.admin.signin);
+app.use("/admin", routes.admin);
 app.use("/blend", routes.blend);
 app.use("/", routes.home);
 app.get("*", routes.error);

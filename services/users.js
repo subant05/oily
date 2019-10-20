@@ -17,15 +17,10 @@ module.exports = {
     }
     , signInUser(email,password, cb) {
         this.getUser(email,(err, user)=>{
-            if(err || user.role !== "administrator" || crypt.encrypt(password) !== user.password)
+            if(err || (user.role !== "administrator" || password != crypt.decrypt(user.password)))
                 cb(err || { status:"400", message:"Invalid Credentials"})
             
-            const token = cuid();
-
-            user.token.push(token)
-            this.updateUser(user.email,
-                            user,
-                            updatedUser=>cb(null, {email: updatedUser.email, token}))
+            cb(null, user)
         
         })
     }
