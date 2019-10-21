@@ -18,6 +18,7 @@ const pages = {
     , oilBlendDetail : require('../../tags/pages/oil-blend-detail.tag')
     , admin :{
          oilAdminDashboard : require('../../tags/pages/admin/oil-admin-dashboard.tag')
+         , oilAdminAddOil : require('../../tags/pages/admin/oil-admin-add-oil.tag')
     }
 
 }

@@ -24,4 +24,11 @@ module.exports = {
         
         })
     }
+    , ensureAdminCredentials(req,res,next){
+        if(req.path !== "/signin" && (!req.session.user || req.session.user.role !== "administrator")){
+            res.redirect('/admin/signin');
+        } else {
+            next()
+        }
+    }
 }

@@ -28,5 +28,8 @@ const oilyMix = {
             this[key] = this.opts[key]
         this.update()
     }
+    , redirect(path){
+      window.location.pathname = path
+    }
   }
 export { oilyMix }

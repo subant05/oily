@@ -7,18 +7,9 @@ const usersService = require("../../../services/users");
 const navigation = riot.render(tags.components.oilNavigation);
 const modal = riot.render(tags.components.oilModal);
 
-function ensureAdminCredentials(req,res,next){
-    console.log(req.session.user)
+route.use(usersService.ensureAdminCredentials)
 
-    if(!req.session.user || req.session.user.role !== "administrator"){
-        res.redirect('/admin/signin');
-        next()
-    } 
-}
-
-route.get("/",function(req,res,next){
-    ensureAdminCredentials(...arguments);
-    
+route.get("/",function(req,res,next){    
     const data = {
         columns:["name"]
         , results: [{name:"Anthony"}]
@@ -30,6 +21,20 @@ route.get("/",function(req,res,next){
         , navigation
         , modal
         , oilAdminDashboard
+        , data
+    })
+});
+
+route.get("/add-oil",function(req,res,next){    
+
+    const data = []
+    const oilAdminAddOil = riot.render(tags.pages.admin.oilAdminAddOil, data)               
+
+    res.render('pages/admin/add-oil', { 
+        title: 'Add Oil'
+        , navigation
+        , modal
+        , oilAdminAddOil
         , data
     })
 });

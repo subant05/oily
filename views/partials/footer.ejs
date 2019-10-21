@@ -3,8 +3,8 @@
 </main>
 <!-- End: Content  -->
 <%- modal %>
-<script src="js/oily.min.js"></script>
-<script src="components/oily-components.js"></script>
+<script src="/js/oily.min.js"></script>
+<script src="/components/oily-components.js"></script>
 <script>
     <% if(typeof data === "object") { %>
         riot.mount("*",<%- JSON.stringify(data)  %>);
