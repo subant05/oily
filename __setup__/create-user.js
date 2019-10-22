@@ -1,30 +1,19 @@
-const userDB = require("../db").users,
-    crypt = require("../db").crypt;
+const db = require("../db"),
+    crypt = require("../utils").crypt;
 
-userDB.batch([{
-        type: "put"
-        , key: "anthonycrawford2@live.com"
-        , value:{ firstname: "Anthony"
-        , lastname: "Crawford"
-        , password: crypt.encrypt("J@cob21408")
-        , email: "anthonycrawford2@live.com"
-        , role: "administrator"
-        , tokens:[]}
-    },
-    {
-        type: "put"
-        , key: "summer6310@hotmail.com"
-        , value: {firstname: "Summer"
-            , lastname: "Hung-Crawford"
-            , email: "summer6310@hotmail.com"
-            , password: crypt.encrypt("J@cob21408")
-            , role: "administrator"
-            , tokens:[]}
-        }],
-        (err)=>{
-            if(err)
+    // crypt.encrypt("J@cob21408").then(password=>{
+    //     db.query(`Update users Set password = "${password}"`, (err,data)=>{
+    //         console.log(data)
+    //     })
+    //     db.end()
+    // })
+
+
+        db.query(`Select * from users where email = "${"anthonycrawford2@live.com"}"`, (err,data)=>{
+            if(err){
                 console.log(err)
-            userDB.get("anthonycrawford2@live.com",(err,data)=>console.log(data))
-            userDB.get("summer6310@hotmail.com",(err,data)=>console.log(data))
-
+                return;
+            }
+            crypt.compare("J@cob21408",  data[0].password).then(res=>console.log(true),error=>console.log(error));
         })
+        db.end()

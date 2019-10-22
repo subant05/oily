@@ -22,8 +22,10 @@
             <option value="internal">Internal</option>
             <option value="aromatic">Aromatic</option>
         </select>
-        <button type="submit" data-ref="save-button">Save</button>
-        <button data-ref="cancel-button">Cancel</button>
+        <fieldset>
+            <button type="submit" data-ref="save-button">Save</button>
+            <button data-ref="cancel-button">Cancel</button>
+        </fieldset>
     </form>
     <script></script>
 </oil-admin-add-oil>

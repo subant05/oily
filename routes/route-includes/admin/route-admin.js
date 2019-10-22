@@ -4,8 +4,8 @@ const riot =  require('riot');
 const tags = require("../../riot-includes");
 const crypt = require("../../../db").crypt
 const usersService = require("../../../services/users");
-const navigation = riot.render(tags.components.oilNavigation);
-const modal = riot.render(tags.components.oilModal);
+const navigation = riot.render(tags.components.admin.oilNavigation);
+const modal ="";
 
 route.use(usersService.ensureAdminCredentials)
 
@@ -27,29 +27,30 @@ route.get("/",function(req,res,next){
 
 route.get("/add-oil",function(req,res,next){    
 
-    const data = []
-    const oilAdminAddOil = riot.render(tags.pages.admin.oilAdminAddOil, data)               
+    const oilAdminAddOil = riot.render(tags.pages.admin.oilAdminAddOil)               
 
     res.render('pages/admin/add-oil', { 
         title: 'Add Oil'
         , navigation
         , modal
         , oilAdminAddOil
-        , data
     })
 });
 
 route.get("/signin",function(req,res,next){
+    const oilAdminSignin = riot.render(tags.pages.admin.oilAdminSignin)  
+
     res.render('pages/admin/signin', { 
         title: 'Log In'
-        , navigation
+        , navigation:""
         , modal
+        , oilAdminSignin
     })
 });
 
 route.post('/signin', function(req, res, next){
-      usersService.signInUser(req.body.email,req.body.password,(err,user)=>{
-         console.log(err)
+      usersService.signInUser(req.body.email, req.body.password, (err,user)=>{
+         console.log("ERROR: ", err)
         if(err){
             if(err.status){
                res.status(err.status.toString());
@@ -61,9 +62,14 @@ route.post('/signin', function(req, res, next){
             return;
         }
 
+        console.log("USER: ", user)
         req.session.user = user;
         res.redirect('/admin');
       })
  });
 
+ route.get("/signout",function(req,res,next){
+    delete req.session.user
+    res.redirect('/admin/signin');
+});
 module.exports = route;
