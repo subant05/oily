@@ -1,31 +1,48 @@
 <oil-admin-add-oil>
-    <form action="/admin/add-oil" method="post" data-ref="oilform" class="crud">
+    <form action="/admin/add-oil" method="post" class="crud" onsubmit={addOil}>
         <label for="name">Name</label>
-        <input type="text" id="name" name="name" data-ref="name" />
+        <input type="text" id="name" name="name" ref="name" />
         <label for="description">Description</label>
-        <textarea name="description" id="description" data-ref="description"></textarea>
+        <textarea name="description" id="description" ref="description"></textarea>
+        <label for="brand">Brand</label>
+        <select name="brand" id="brand" ref="brand">
+            <option  each={value, i in brands} value={i}>{value}</option>
+        </select>
+        <button type="button" id="addBrand" ref="addOil" onclick={insertNewBrand}> Add Brand</button>
         <label for="family">Family</label>
-        <select name="family" id="family" data-ref="family">
-            <option value="floral">Floral</option>
-            <option value="woodsy">Woodsy</option>
-            <option value="earthy">Earthy</option>
-            <option value="herbaceous">Herbaceous</option>
-            <option value="camphoraceous">Camphoraceous</option>
-            <option value="resinous">Resinous</option>
-            <option value="medicinal">Medicinal</option>
-            <option value="spicy">Spicy</option>
-            <option value="fruity">Fruity</option>
+        <select name="family" id="family" ref="family">
+            <option  each={value, i in family} value={i}>{value}</option>
         </select>
         <label for="uses">uses</label>
-        <select name="uses" id="uses" data-ref="uses">
-            <option value="topical">Topical</option>
-            <option value="internal">Internal</option>
-            <option value="aromatic">Aromatic</option>
+        <select name="uses" id="uses" ref="uses">
+            <option  each={value, i in uses} value={i}>{value}</option>
         </select>
         <fieldset>
-            <button type="submit" data-ref="save-button">Save</button>
-            <button data-ref="cancel-button">Cancel</button>
+            <button type="submit" ref="save-button">Save</button>
+            <button type="button" ref="cancel-button">Cancel</button>
         </fieldset>
     </form>
-    <script></script>
+    <script>
+            function insertNewBrand(e){
+                e.preventDefault()
+                console.log(e)
+            }
+
+            function addOil(e){
+                e.preventDefault()
+                alert(e)
+            }
+            this.addOil = addOil;
+            this.insertNewBrand = insertNewBrand;
+
+            this.on("mount",()=>{
+                if( !this.setProperties){      
+                    this.brands = opts.brands;
+                    this.uses = opts.uses;
+                    this.family = opts.family;
+                    console.log(this.family)
+                    this.update();
+                }
+            })
+    </script>
 </oil-admin-add-oil>

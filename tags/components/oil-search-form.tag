@@ -13,7 +13,6 @@
     <script>
         function submitHanlder(e){
             e.preventDefault()
-            console.log("Submit: ", this.refs.search.value)
             this.trigger("submit",this.refs.search.value)
         }
         this.on("mount",(e)=>{

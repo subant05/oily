@@ -4,6 +4,7 @@ const riot =  require('riot');
 const tags = require("../../riot-includes");
 const crypt = require("../../../db").crypt
 const usersService = require("../../../services/users");
+const oilService = require("../../../services/oils");
 const navigation = riot.render(tags.components.admin.oilNavigation);
 const modal ="";
 
@@ -27,13 +28,19 @@ route.get("/",function(req,res,next){
 
 route.get("/add-oil",function(req,res,next){    
 
-    const oilAdminAddOil = riot.render(tags.pages.admin.oilAdminAddOil)               
-
-    res.render('pages/admin/add-oil', { 
-        title: 'Add Oil'
-        , navigation
-        , modal
-        , oilAdminAddOil
+    oilService.getOilProperties().then((data)=>{
+        const oilAdminAddOil = riot.render(tags.pages.admin.oilAdminAddOil, data) 
+        res.render('pages/admin/add-oil', { 
+            title: 'Add Oil'
+            , navigation
+            , modal
+            , oilAdminAddOil
+            , data
+        })
+    },
+    (err)=>{
+        res.status("500");
+        res.send("We are experiencing technical difficulties. Please try again later."); 
     })
 });
 
