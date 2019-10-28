@@ -17,7 +17,7 @@
     <script>
         function submit(value){
             this.searchValue = value.trim();
-            console.log("Event Emmited from search-form component: ", this.searchValue)
+           // console.log("Event Emmited from search-form component: ", this.searchValue)
         }
         this.on("mount",()=>{
             this.refs.searchBar.on("submit",submit);

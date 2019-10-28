@@ -1,5 +1,26 @@
 import MessageCenter from './observable';
 import Lubrication from './observable';
+
+function convertObjToGetString(obj){
+  let str=""
+  Object.keys(obj).forEach((key,index)=>{
+      str += `${!index ? "?" : "&"}${key.toString()}=${obj[key].toString()}`
+  })
+  return str;
+}
+function validateAjaxResponse(xhr, resolve, reject){
+  xhr.onload = ()=>{
+    if([200,300,301].indexOf(xhr.status) != -1)
+      return resolve(JSON.parse(xhr.responseText))
+    else{
+      return reject(xhr.responseText)
+    }
+  }
+  xhr.onerror = ()=>{
+    console.log("Error:",xhr)
+    reject(xhr)
+  }
+}
 const drip = new Lubrication();
 const oilyMix = {
     // the `opts` argument is the option object received by the tag as well
@@ -30,6 +51,25 @@ const oilyMix = {
     }
     , redirect(path){
       window.location.pathname = path
+    }
+    , ajax: {
+      post(config){
+        return new Promise((resolve,reject)=>{
+          const xhr = new XMLHttpRequest();
+          xhr.open("post",config.url, true);
+          validateAjaxResponse(xhr, resolve, reject)
+          xhr.send(config.data)
+        })
+      }
+      , get(config){
+        return new Promise((resolve,reject)=>{
+          const xhr = new XMLHttpRequest();
+          config.url += convertObjToGetString(config.data)
+          xhr.open("get",config.url, true);
+          validateAjaxResponse(xhr, resolve, reject)
+        })
+        xhr.send()
+      }
     }
   }
 export { oilyMix }

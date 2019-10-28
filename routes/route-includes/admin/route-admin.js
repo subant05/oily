@@ -26,6 +26,7 @@ route.get("/",function(req,res,next){
     })
 });
 
+
 route.get("/add-oil",function(req,res,next){    
 
     oilService.getOilProperties().then((data)=>{
@@ -44,6 +45,18 @@ route.get("/add-oil",function(req,res,next){
     })
 });
 
+route.post("/add-oil",function(req,res,next){    
+    oilService.createOil(req.body).then(
+        (data)=>{
+            res.status(200)
+            res.send(JSON.stringify({msg:"success"}))
+        }
+        , (err)=>{
+            res.status("500");
+            res.send("We are experiencing technical difficulties. Please try again later."); 
+        })
+});
+
 route.get("/signin",function(req,res,next){
     const oilAdminSignin = riot.render(tags.pages.admin.oilAdminSignin)  
 
@@ -57,19 +70,17 @@ route.get("/signin",function(req,res,next){
 
 route.post('/signin', function(req, res, next){
       usersService.signInUser(req.body.email, req.body.password, (err,user)=>{
-         console.log("ERROR: ", err)
         if(err){
             if(err.status){
                res.status(err.status.toString());
                res.send(err.message);
             } else{
-               res.status("500");
+               res.status("500")
                res.send("We are experiencing technical difficulties. Please try again later."); 
             }
             return;
         }
 
-        console.log("USER: ", user)
         req.session.user = user;
         res.redirect('/admin');
       })

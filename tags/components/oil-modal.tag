@@ -15,7 +15,6 @@
             this.active = false;
            if(this.drip){
             this.drip.on("login",()=>{
-                console.log("Log In Fired")
                 this.active = true;
                 this.update()
             })
