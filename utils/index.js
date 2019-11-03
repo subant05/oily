@@ -11,7 +11,11 @@ module.exports = {
         , compare: bcrypt.compare
     }
     , sql: {
-        parseSQLJoin(data) {
+        handleSQLError(err){
+            console.log("SQL ERROR:", err);
+            return Promise.reject(err)
+        }
+        , parseSQLJoin(data) {
             const returnData = {}
             data.forEach( (slot, index)=> {
                 for( key in slot){
@@ -27,7 +31,7 @@ module.exports = {
         , query(query,convertData = a=>a){
             return new Promise((resolve, reject)=>{
                 db.query(query,(err,data)=>{
-                    console.log("QUERY: ","Error: ",err,"Data: ",data)
+                    // console.log("QUERY: ","Error: ",err,"Data: ",data)
                     if(err){
                         reject(err)
                         return;

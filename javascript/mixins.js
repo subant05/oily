@@ -1,5 +1,6 @@
 import MessageCenter from './observable';
 import Lubrication from './observable';
+import {apiRoutes} from "./api-routes"
 
 function convertObjToGetString(obj){
   let str=""
@@ -23,6 +24,9 @@ function validateAjaxResponse(xhr, resolve, reject){
 }
 const drip = new Lubrication();
 const oilyMix = {
+    // API Routes
+    apiRoutes,
+    
     // the `opts` argument is the option object received by the tag as well
     init: function(opts) {
         this.on('updated', (e)=> { 

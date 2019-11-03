@@ -45,17 +45,6 @@ route.get("/add-oil",function(req,res,next){
     })
 });
 
-route.post("/add-oil",function(req,res,next){    
-    oilService.createOil(req.body).then(
-        (data)=>{
-            res.status(200)
-            res.send(JSON.stringify({msg:"success"}))
-        }
-        , (err)=>{
-            res.status("500");
-            res.send("We are experiencing technical difficulties. Please try again later."); 
-        })
-});
 
 route.get("/signin",function(req,res,next){
     const oilAdminSignin = riot.render(tags.pages.admin.oilAdminSignin)  
@@ -90,4 +79,29 @@ route.post('/signin', function(req, res, next){
     delete req.session.user
     res.redirect('/admin/signin');
 });
+
+// API
+route.post("/api/add-oil",function(req,res,next){    
+    oilService.createOil(req.body).then(
+        (data)=>{
+            res.status(200)
+            res.send(JSON.stringify({msg:"success"}))
+        }
+        , (err)=>{
+            res.status("500");
+            res.send("We are experiencing technical difficulties. Please try again later."); 
+        })
+});
+
+route.get("/api/oils", function(req,res,next){
+    oilService.getOils().then((data)=>{
+        res.status(200)
+        res.send(JSON.stringify({msg:"success"}))
+    }
+    , (err)=>{
+        res.status("500");
+        res.send("We are experiencing technical difficulties. Please try again later."); 
+    })
+
+})
 module.exports = route;

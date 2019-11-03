@@ -3,6 +3,7 @@
     <oil-table columns={columns} results={results}></oil-table>
 
     <script>
+    
 
         this.on("mount", ()=>{
             if(!this.setProperties){
