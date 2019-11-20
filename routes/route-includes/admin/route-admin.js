@@ -12,19 +12,28 @@ route.use(usersService.ensureAdminCredentials)
 
 route.get("/",function(req,res,next){    
     const oilAdminDashboard = riot.render(tags.pages.admin.oilAdminDashboard, {})               
+    res.render('pages/admin/home', { 
+        title: 'Admin Dashboard'
+        , navigation
+        , modal
+        , oilAdminDashboard
+    })
+});
+
+route.get("/list-oils",function(req,res,next){    
+    const oilAdminListOils = riot.render(tags.pages.admin.oilAdminListOils, {})               
     oilService.getOils().then(data=>{
-        console.log("Data: ", data)
-        res.render('pages/admin/home', { 
-            title: 'Admin Dashboard'
+        console.log("Oil List Data: ", data)
+        res.render('pages/admin/list-oils', { 
+            title: 'Oil List'
             , navigation
             , modal
-            , oilAdminDashboard
+            , oilAdminListOils
             , data
         })
     })
     
 });
-
 
 route.get("/add-oil",function(req,res,next){    
 

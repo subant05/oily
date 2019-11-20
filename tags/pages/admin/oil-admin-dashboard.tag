@@ -1,12 +1,12 @@
 <oil-admin-dashboard>
 
-    <oil-table columns={columns} results={results}></oil-table>
+    <h2>{title}</h2>
 
     <script>
+        this.title = "Dashboard"
         this.on("mount", ()=>{
             if(!this.setProperties){
-                this.columns = opts.columns;
-                this.results = opts.results;
+
                 this.update();
             }
         })

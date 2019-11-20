@@ -12,6 +12,7 @@
     </nav>
     <script>
         this.on("mount",()=>{
+            this.refs.oils.addEventListener("click", ()=> this.redirect("/admin/list-oils"), false)
             this.refs.addOil.addEventListener("click", ()=> this.redirect("/admin/add-oil"), false)
             this.refs.signOut.addEventListener("click", ()=> this.redirect("/admin/signout"), false)
         })

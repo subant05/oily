@@ -23,6 +23,7 @@ const pages = {
         oilAdminSignin : require('../../tags/pages/admin/oil-admin-signin.tag')
          , oilAdminDashboard : require('../../tags/pages/admin/oil-admin-dashboard.tag')
          , oilAdminAddOil : require('../../tags/pages/admin/oil-admin-add-oil.tag')
+         , oilAdminListOils : require('../../tags/pages/admin/oil-admin-list-oils.tag')
     }
 
 }
