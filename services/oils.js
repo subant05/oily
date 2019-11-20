@@ -8,7 +8,16 @@ const handleSQLError = require("../utils").sql.handleSQLError;
 
 module.exports = {
     async getOils(key, cb= a=>a){ 
-        return query("SELECT * FROM oilchemist.oil_properties")
+        return query("SELECT name, description, brand, family, uses FROM oilchemist.oil_properties").then(
+            results=>{
+                const columns = [];
+
+                for(key in results[0])
+                    columns.push(key)
+
+                return {columns, results}
+            }
+        )
     }
     , async addOilBrand(data){
         if(!isNaN( parseInt(data.brand) ))

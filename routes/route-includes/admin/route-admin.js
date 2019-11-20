@@ -11,19 +11,18 @@ const modal ="";
 route.use(usersService.ensureAdminCredentials)
 
 route.get("/",function(req,res,next){    
-    const data = {
-        columns:["name"]
-        , results: [{name:"Anthony"}]
-    }
-    const oilAdminDashboard = riot.render(tags.pages.admin.oilAdminDashboard, data)               
-
-    res.render('pages/admin/home', { 
-        title: 'Admin Dashboard'
-        , navigation
-        , modal
-        , oilAdminDashboard
-        , data
+    const oilAdminDashboard = riot.render(tags.pages.admin.oilAdminDashboard, {})               
+    oilService.getOils().then(data=>{
+        console.log("Data: ", data)
+        res.render('pages/admin/home', { 
+            title: 'Admin Dashboard'
+            , navigation
+            , modal
+            , oilAdminDashboard
+            , data
+        })
     })
+    
 });
 
 

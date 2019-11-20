@@ -2,7 +2,7 @@
 <table class="u-full-width">
   <thead>
     <tr>
-      <th each={column in columns}>column</th>
+      <th each={column in columns}>{column.replace(/\w/, column.charAt(0).toUpperCase())}</th>
     </tr>
   </thead>
   <tbody>
