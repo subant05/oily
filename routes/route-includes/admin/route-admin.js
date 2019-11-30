@@ -17,6 +17,7 @@ route.get("/",function(req,res,next){
         , navigation
         , modal
         , oilAdminDashboard
+        , data:{}
     })
 });
 
