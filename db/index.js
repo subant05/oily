@@ -7,7 +7,7 @@ const mysql = require("mysql")
         , connectTimeout:10
         , host: "localhost"
         , user: "root" 
-        , password: "Ch@rles77"
+        , password: "<password>"
         , database: "oilchemist"
     })    
 
